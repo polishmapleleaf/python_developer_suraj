@@ -80,9 +80,9 @@ def get_date_input():
 
 def get_precipitation_status(value):
     if value is None or value < 0:
-        return "I don't know if it will rain."
+        return "I don't know if it will rain"
     elif value > 0.0:
-        return f"It will rain. Precipitation: {value}mm"
+        return f"It will rain, Precipitation: {value}mm"
     else:
         return "It will not rain."
 
@@ -93,13 +93,13 @@ def main():
     try:
         date.fromisoformat(target_date)
     except ValueError:
-        print("Invalid date format. Please use YYYY-mm-dd.")
+        print("Invalid date format,Please use YYYY-mm-dd.")
         return
 
 
     precipitation_value = weather_forecast[target_date]
     status = get_precipitation_status(precipitation_value)
-    print(f"\nWeather for {target_date}:")
+    print(f"\nWaether for {target_date}:")
     print(status)
 
     print("\n--- Demonstrating class functionality ---")
@@ -110,7 +110,7 @@ def main():
     print("\nCached (date, precipitation) items (using .items()):")
     for d, p in weather_forecast.items():
         print(f"- {d}: {p}mm")
-    print("---------------------------------------")
+    print("----------------")
 
 if __name__ == "__main__":
     main()
